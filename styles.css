@@ -632,3 +632,12 @@ a:hover{
   opacity: 1;
   transform: translateY(0);
 }
+
+.footer__handle a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer__handle a:hover {
+  text-decoration: underline;
+}
