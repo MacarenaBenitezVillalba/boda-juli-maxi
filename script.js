@@ -193,3 +193,4 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll(".reveal").forEach(section => {
     observer.observe(section);
 });
+
