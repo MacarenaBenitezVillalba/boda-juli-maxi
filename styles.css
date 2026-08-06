@@ -1,0 +1,634 @@
+@font-face {
+  font-family: "Italianno";
+  src: url("assets/fonts/italianno-regular.ttf") format("truetype"),
+       url("assets/fonts/italianno-regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Bodoni Moda reemplazado por Libre Bodoni (cargado desde Google Fonts en el <head>).
+   Tiene trazos menos finos, así se lee mejor en pantalla. */
+
+@font-face {
+  font-family: "Poppins";
+  src: url("assets/fonts/poppins-regular.ttf") format("truetype"),
+       url("assets/fonts/poppins-regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("assets/fonts/poppins-bold.ttf") format("truetype"),
+       url("assets/fonts/poppins-bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* ============================================================
+   VARIABLES (tu paleta cromática)
+============================================================ */
+:root {
+  --olive:  #595e49;   /* verde oliva oscuro */
+  --sage:   #919683;   /* verde salvia */
+  --terra:  #c7a492;   /* terracota / malva */
+  --pink:   #eecfca;   /* rosa suave */
+  --cream:  #ece1dc;   /* crema (color más claro) */
+  --white:  #f6f1ee;   /* blanco cálido para texto sobre oscuro */
+
+  --font-script:  "Italianno", "Georgia", serif;      /* cursiva */
+--font-display: "Libre Bodoni", "Georgia", serif;    /* títulos / botón / contador */
+  --font-body:    "Poppins", "Helvetica Neue", Arial, sans-serif; /* cuerpo */
+
+  --content-width: 620px;  /* ancho máximo del contenido (texto) en pantallas grandes */
+}
+
+
+/* ============================================================
+   RESET / BASE
+============================================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: var(--cream);
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--olive);
+  background-color: var(--cream);
+  line-height: 1.6;
+  width: 100%;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+img { display: block; max-width: 100%; height: auto; }
+a   { color: inherit; }
+
+/* Contenedor de contenido: ocupa todo el ancho en mobile y se limita
+   (centrado) en pantallas grandes, para que no queden márgenes enormes. */
+.wrap {
+  width: 100%;
+  max-width: var(--content-width);
+  margin: 0 auto;
+}
+/* ============================================================
+   TIPOGRAFÍA COMÚN
+============================================================ */
+.script-title {
+  font-family: var(--font-script);
+  font-weight: 400;
+  font-size: 3rem;            /* Italianno es alta, por eso más grande */
+  line-height: 1.1;
+  color: var(--olive);
+  text-align: center;
+  text-wrap: balance;
+  margin-bottom: 1rem;
+}
+
+.script-title--lg   { font-size: 2.6rem; }
+.script-title--xl   { font-size: 3.6rem; }
+.script-title--light { color: var(--cream); }
+
+/* Subtítulos tipo "FIESTA & CEREMONIA" -> Bodoni Moda bold */
+.eyebrow {
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.72rem;
+  text-align: center;
+  color: var(--olive);
+  margin-bottom: 0.75rem;
+}
+
+
+/* ============================================================
+   SECCIONES GENÉRICAS
+============================================================ */
+.section { padding: 3.5rem 1.75rem; }
+
+.section--olive { background-color: var(--olive); }
+
+.info-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.illustration {
+  width: 120px;
+  height: auto;
+  margin-bottom: 0.75rem;
+}
+
+/* Animación sutil (fiesta / no puede faltar) */
+.illustration--float { animation: float 2.5s ease-in-out infinite; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
+}
+
+
+/* Bloque sobre fondo liso claro (Fiesta + Galería + No puede faltar) */
+.light-block { background-color: var(--cream); }
+
+
+/* ============================================================
+   1. PORTADA
+============================================================ */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 560px;
+  /* Reemplazá por tu foto de portada en /assets/images */
+  background-image: url(assets/images/hero/hero-mobile.png);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(89, 94, 73, 0.55), rgba(89, 94, 73, 0) 45%);
+}
+
+.hero__content {
+  position: relative;
+  width: 100%;
+  padding: 0 1.75rem 3rem;
+}
+
+.hero__names { margin: 0; }
+.hero__names img { width: 78%; max-width: 340px; margin: 0 auto; }
+
+
+/* ============================================================
+   DIVIDER DE ROMBOS  (assets/illustrations/divider.svg)
+============================================================ */
+.divider {
+  --divider-h: 28px;
+  position: relative;
+  z-index: 3;
+  height: var(--divider-h);
+  background-image: url("assets/illustrations/divider.svg");
+  background-repeat: repeat-x;
+  background-position: center;
+  background-size: auto 100%;
+  /* Los márgenes negativos "suben/bajan" el divider para que quede
+     centrado justo sobre la costura entre las dos secciones,
+     tapando el corte en lugar de ocupar un espacio propio. */
+  margin-top: calc(var(--divider-h) / -2);
+  margin-bottom: calc(var(--divider-h) / -2);
+}
+
+
+/* ============================================================
+   2. CUENTA REGRESIVA  (fondo textura de papel)
+============================================================ */
+.countdown-section {
+  /* Reemplazá por tu textura en /assets/background */
+  background-image: url(assets/backgrounds/paper-pink.webp);
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 3rem 1.75rem 3.5rem;
+}
+
+/* 21 de noviembre -> Bodoni Moda bold */
+.date {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* "Faltan..." -> Bodoni Moda regular */
+.countdown-label {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.1rem;
+  margin: 1.25rem 0;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+}
+
+.countdown__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 56px;
+}
+
+/* Números del contador -> Bodoni Moda regular */
+.countdown__number {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 2.6rem;
+  color: var(--olive);
+  line-height: 1;
+}
+
+/* Días / Horas / Minutos / Segundos -> Bodoni Moda bold */
+.countdown__unit {
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.6rem;
+  margin-top: 0.5rem;
+  color: var(--olive);
+}
+
+
+/* ============================================================
+   DETALLES DE INFO (Ruta, subtítulos) -> Poppins
+============================================================ */
+.info-details {
+  margin-bottom: 1.75rem;
+  font-size: 0.95rem;
+}
+.info-details p { margin: 0.15rem 0; }
+
+.info-subtitle {
+  font-size: 0.95rem;
+  margin-top: 1.5rem;
+  color: var(--olive);
+}
+
+.info-section .info-subtitle { margin-top: 0.5rem; margin-bottom: 1.75rem; }
+.info-section .info-subtitle:last-child { margin-bottom: 0; }
+
+
+/* ============================================================
+   BOTÓN  -> Bodoni Moda bold
+============================================================ */
+.btn {
+  display: inline-block;
+  background-color: var(--olive);
+  color: var(--cream);
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.72rem;
+  padding: 0.85rem 2rem;
+  border-radius: 999px;
+  transition: background-color 0.25s ease, transform 0.15s ease;
+}
+
+.btn:hover  { background-color: var(--sage); }
+.btn:active { transform: scale(0.97); }
+
+.section--olive .btn { background-color: var(--cream); color: var(--olive); }
+.section--olive .btn:hover { background-color: var(--pink); }
+
+
+/* ============================================================
+   4. GALERÍA (9 fotos)
+============================================================ */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.6rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.gallery__item {
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.gallery__item img { width: 100%; height: 100%; object-fit: cover; }
+
+
+/* ============================================================
+   6 / 8. SECCIÓN VERDE + ACORDEÓN (con bordes curvos)
+============================================================ */
+.details-section {
+  text-align: center;
+  /* Arcos suaves arriba y abajo, como en la maqueta */
+  border-top-left-radius: 100% 42px;
+  border-top-right-radius: 100% 42px;
+  border-bottom-left-radius: 100% 42px;
+  border-bottom-right-radius: 100% 42px;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.accordion {
+  max-width: 360px;
+  margin: 1.5rem auto 0;
+  text-align: left;
+}
+
+.accordion__item {
+  border-bottom: 1px solid rgba(236, 225, 220, 0.35);
+}
+
+/* Preguntas (¿Qué me pongo?) -> Bodoni Moda regular */
+.accordion__trigger {
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.05rem;
+  color: var(--cream);
+  text-align: left;
+}
+
+/* Flecha triangular */
+.accordion__arrow {
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 7px solid var(--cream);
+  transition: transform 0.25s ease;
+  flex-shrink: 0;
+}
+
+.accordion__trigger[aria-expanded="true"] .accordion__arrow {
+  transform: rotate(90deg);
+}
+
+.accordion__panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  
+}
+
+.accordion__panel a{
+    display:inline-block;
+    margin-top:1rem;
+    color:var(--cream);
+    font-family:var(--font-body);
+    text-decoration:underline;
+    font-weight:600;
+}
+
+/* Texto del panel -> Poppins */
+.accordion__panel-inner {
+  padding-bottom: 1.25rem;
+}
+
+.accordion__panel p {
+  font-family: var(--font-body);
+  color: var(--cream);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+.accordion__panel p:last-child { margin-bottom: 0; }
+
+.accordion__panel a { text-decoration: underline; }
+
+/* SVG dresscode (estrellas de colores) */
+.dresscode {
+  width: 100%;
+  max-width: 300px;
+  margin: 0.5rem 0 1rem;
+}
+
+/* Links de alojamiento en mayúscula */
+.lodging-link a {
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  font-size: 0.82rem;
+}
+
+
+/* ============================================================
+   MONOGRAMA (SVG light / dark)
+============================================================ */
+.monogram {
+  width: 60px;
+  height: auto;
+  margin: 2.5rem auto 0;
+}
+
+
+/* ============================================================
+   10. BANNER DE FOTOS (4 fotos fijas, no se deslizan)
+============================================================ */
+.photo-banner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.photo-banner img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+
+/* ============================================================
+   11. GRACIAS
+============================================================ */
+.thanks {
+  text-align: center;
+  padding: 3.5rem 1.75rem;
+  background-image: url(assets/backgrounds/paper-pink.webp);
+}
+
+
+/* ============================================================
+   12. FOOTER
+============================================================ */
+.footer {
+  background-color: var(--olive);
+  color: var(--cream);
+  text-align: center;
+  padding: 2rem 1.75rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+}
+
+.footer__handle { font-weight: 600; margin-bottom: 0.4rem; }
+.footer__brand  { margin-bottom: 0.4rem; }
+.footer__rights { opacity: 0.8; }
+
+
+/* ============================================================
+   BOTÓN DE MÚSICA (flotante)
+============================================================ */
+.music-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 50;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  background-color: rgba(89, 94, 73, 0.85);
+  color: var(--cream);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+  transition: background-color 0.25s ease;
+  animation: float 2.5s ease-in-out infinite;
+}
+
+.music-toggle:hover { background-color: var(--olive); }
+
+.music-toggle .icon-pause { display: none; }
+.music-toggle.is-playing .icon-play  { display: none; }
+.music-toggle.is-playing .icon-pause { display: block; }
+
+/* ============================================================
+   EFECTO "REVEAL" AL SCROLLEAR
+   Los elementos aparecen suavemente (fade + leve subida) cuando
+   entran en pantalla. La clase .is-visible la agrega script.js.
+============================================================ */
+.reveal {
+  opacity: 0;
+  transform: translatex(28px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ============================================================
+   RESPONSIVE (pantallas grandes)
+   El contenido de texto se centra en .wrap; los fondos, el hero
+   y el banner de fotos ocupan todo el ancho de la pantalla.
+============================================================ */
+@media (min-width: 700px) {
+  .section { padding: 5rem 2rem; }
+
+  .script-title      { font-size: 3.6rem; }
+  .script-title--lg  { font-size: 3.1rem; }
+  .script-title--xl  { font-size: 4.4rem; }
+ .date{
+    font-size: 2rem;
+  }
+  .countdown { gap: 2.5rem; }
+  .countdown__number { font-size: 3.4rem; }
+  .countdown__item { min-width: 72px; }
+.gallery-section .wrap{
+    max-width: 1200px;
+}
+  .illustration { width: 150px; }
+
+  /* El hero horizontal se luce a lo ancho.
+     En web usamos otra foto (formato horizontal) de /assets/images.
+     Cambiá "portada-web.jpg" por el nombre real de tu archivo. */
+  .hero {
+    
+    background-image: url(assets/images/hero/hero-desktop.png);
+    
+  }
+  .hero__names img { max-width: 420px; }
+
+   /* Oculta el logo en escritorio */
+    .hero__names{
+        display:none;
+    }
+
+    .hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(89, 94, 73, 0.55), rgba(89, 94, 73, 0) 45%);
+}
+
+  /* Curvas de las secciones olive un poco más amplias */
+  /* Sin animación de entrada: todo visible desde el inicio */
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .details-section {
+    border-top-left-radius: 100% 64px;
+    border-top-right-radius: 100% 64px;
+    border-bottom-left-radius: 100% 64px;
+    border-bottom-right-radius: 100% 64px;
+  }
+
+   .dj-section{
+        padding-top:2rem;
+        padding-bottom:4rem;
+    }
+
+    .dj-section .illustration{
+        margin-bottom:.3rem;
+    }
+
+    .dj-section .script-title{
+        margin-bottom:.7rem;
+        line-height:.95;
+    }
+
+    .dj-section .info-subtitle{
+        white-space:nowrap;
+        font-size:1rem;
+        margin-bottom:1.5rem;
+    }
+/* ============================================================
+CORRECION CLICK DRESSCODE
+============================================================ */
+a{
+    color:#595e49;
+    text-decoration:underline;
+}
+
+a:hover{
+    opacity:0.7;
+}
+}
+
+/* ==========================
+   EFECTO REVEAL AL SCROLL
+========================== */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity .8s ease, transform .8s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}

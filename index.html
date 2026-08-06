@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="g-cream">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Juli &amp; Maxi · 21 de noviembre de 2026</title>
+  <meta name="description" content="Nos casamos. Juli & Maxi te invitan a celebrar el 21 de noviembre de 2026 en Estancia Monte Viejo, Coronel Brandsen." />
+  <meta name="theme-color" content="#595e49" />
+
+  <!-- Favicon (reemplazá por tu archivo en /assets/favicon) -->
+  <link rel="icon" href="assets/favicon/favicon.ico" />
+<!-- Libre Bodoni desde Google Fonts (títulos, contador, subtítulos, botón) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ============================ MÚSICA ============================ -->
+  <button id="music-toggle" class="music-toggle" type="button" aria-label="Reproducir música de fondo" aria-pressed="false">
+    <!-- Reemplazá el archivo por tu canción en /assets/music -->
+    <svg class="icon-play" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+    <svg class="icon-pause" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+    </button>
+   <audio id="bg-music" loop preload="none">
+    <source src="assets/music/audio-j&m.MP3" type="audio/mpeg" />
+  </audio>
+
+
+  <!-- ============================ 1. PORTADA ============================ -->
+  <header class="hero">
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+       <!-- Logo "Juli & Maxi" (SVG en /assets/logo) -->
+      <h1 class="hero__names">
+         <img src="assets/logo/juli-maxi.svg" alt="Juli y Maxi" />
+      </h1>
+    </div>
+  </header>
+
+  <!-- Divider de rombos: ENTRE el hero y la textura de papel -->
+  <div class="divider" aria-hidden="true"></div>
+
+  <!-- ============================================================
+       2. FECHA + CUENTA REGRESIVA  (fondo: textura de papel)
+  ============================================================ -->
+  <section class="countdown-section">
+    <p class="date">21 de Noviembre de 2026</p>
+    <h2 class="script-title">¡Nos casamos!</h2>
+    <p class="countdown-label">Faltan...</p>
+
+    <!-- data-wedding define la fecha objetivo (formato ISO) -->
+    <div class="countdown" data-wedding="2026-11-21T19:00:00">
+      <div class="countdown__item">
+        <span class="countdown__number" id="cd-days">00</span>
+        <span class="countdown__unit">Días</span>
+      </div>
+      <div class="countdown__item">
+        <span class="countdown__number" id="cd-hours">00</span>
+        <span class="countdown__unit">Horas</span>
+      </div>
+      <div class="countdown__item">
+        <span class="countdown__number" id="cd-minutes">00</span>
+        <span class="countdown__unit">Minutos</span>
+      </div>
+      <div class="countdown__item">
+        <span class="countdown__number" id="cd-seconds">00</span>
+        <span class="countdown__unit">Segundos</span>
+      </div>
+    </div>
+  </section>
+<!-- Divider de rombos: DEBAJO del contador, entre la textura de papel y el fondo liso claro -->
+  <div class="divider" aria-hidden="true"></div>
+
+ <!-- ============================================================
+       BLOQUE SOBRE FONDO LISO CLARO:
+       Fiesta & Ceremonia + Galería (9) + No puede faltar
+  ============================================================ -->
+  <div class="light-block">
+
+    <!-- 3. FIESTA & CEREMONIA -->
+    <section class="section info-section">
+      <!-- Ilustración "fiesta" con animación sutil -->
+      <img class="illustration illustration--float" src="assets/illustrations/fiesta.svg" alt="" width="120" height="120" />
+      <p class="eyebrow">Fiesta &amp; Ceremonia</p>
+      <h2 class="script-title">Estancia Monte Viejo</h2>
+
+      <div class="info-details">
+        <p>Dirección: Ruta 215, km 51. Cnel Brandsen</p>
+        <p>Horario de llegada: 18:30pm</p>
+        <p>Inicio de ceremonia: 19:00pm</p>
+        <p>Fin de fiesta: 03:00am</p>
+      </div>
+
+      <!-- BOTÓN: pegá acá tu link de Google Maps -->
+      <a class="btn" href="https://www.google.com/maps/place/Estancia+MV/@-35.190532,-58.263907,17z/data=!3m1!4b1!4m9!3m8!1s0x95a2b610cf26bfdb:0xbb65356280c31b7f!5m2!4m1!1i2!8m2!3d-35.190532!4d-58.263907!16s%2Fg%2F1wn34vn_!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MDcyMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">Cómo llegar</a>
+    </section>
+
+
+    <!-- Galería (9 fotos) -->
+    <section class="section gallery-section">
+      <div class="wrap">
+        <div class="gallery">
+          <!-- Reemplazá cada src por tus fotos en /assets/images -->
+          <figure class="gallery__item"><img src="assets/images/gallery/foto-01.webp" alt="Juli y Maxi" /></figure>
+          <figure class="gallery__item"><img src="assets/images/gallery/foto-02.webp" alt="Juli y Maxi" /></figure>
+          <figure class="gallery__item"><img src="assets/images/gallery/foto-03.webp" alt="Juli y Maxi" /></figure>
+          <figure class="gallery__item"><img src="assets/images/gallery/foto-04.webp" alt="Juli y Maxi" /></figure>
+          <figure class="gallery__item"><img src="assets/images/gallery/foto-05.webp" alt="Juli y Maxi" /></figure>
+          <figure class="gallery__item"><img src="assets/images/gallery/foto-06.webp" alt="Juli y Maxi" /></figure>
+          <figure class="gallery__item"><img src="assets/images/gallery/foto-07.webp" alt="Juli y Maxi" /></figure>
+          <figure class="gallery__item"><img src="assets/images/gallery/foto-08.webp" alt="Juli y Maxi" /></figure>
+          <figure class="gallery__item"><img src="assets/images/gallery/foto-09.webp" alt="Juli y Maxi" /></figure>
+        </div>
+      </div>
+    </section>
+
+  <!-- ============================================================
+       5. DJ PERSONAL
+  ============================================================ -->
+  <section class="section section--cream info-section dj-section">
+    <img class="illustration illustration--float" src="assets/illustrations/abanico.svg" alt="" width="90" height="90" />
+    <p class="eyebrow">No puede faltar</p><br>
+  
+    <h2 class="script-title script-title--lg">¡Te invitamos a ser nuestro DJ personal de la noche!</h2>
+    <p class="info-subtitle">Ayudanos a armar la lista de canciones para nuestra fiesta</p>
+
+    <!-- BOTÓN: pegá acá tu link (Google Forms / Spotify, etc.) -->
+    <a class="btn" href="https://forms.gle/RrBdifEpYxquxrpy8" target="_blank" rel="noopener">Sugerí tu tema acá</a>
+  </section>
+
+
+  <!-- ============================================================
+       6. CONOCÉ LOS DETALLES (acordeón, fondo verde)
+  ============================================================ -->
+  <section class="section section--olive details-section">
+    <h2 class="script-title script-title--light">Conocé los detalles</h2>
+
+    <div class="accordion">
+      <div class="accordion__item">
+        <button class="accordion__trigger" aria-expanded="false">
+          <span>¿Qué me pongo?</span>
+          <span class="accordion__arrow" aria-hidden="true"></span>
+        </button>
+        <div class="accordion__panel">
+          <p>El dress code de nuestra boda es elegante.<br>
+            
+            Paleta de color sugerida: colores pasteles.</p>
+          <a href="assets/pdf/dresscode.pdf" target="_blank">
+    Te ayudamos a inspirarte!</a>
+    <img src="assets/illustrations/dresscode.svg" alt="">
+        </div>
+      </div>
+
+      <div class="accordion__item">
+        <button class="accordion__trigger" aria-expanded="false">
+          <span>¿Pueden ir niños?</span>
+          <span class="accordion__arrow" aria-hidden="true"></span>
+        </button>
+        <div class="accordion__panel">
+          <p>Adoramos a los más chiquitos, pero pensamos esta celebración como una noche
+             para disfrutar entre adultos. Por favor, no nos comprometas. Respeta solo a los invitados de la tarjeta.
+             ¡Gracias por comprender! </p>
+        </div>
+      </div>
+
+      <div class="accordion__item">
+        <button class="accordion__trigger" aria-expanded="false">
+          <span>Si querés hacernos un regalo...</span>
+          <span class="accordion__arrow" aria-hidden="true"></span>
+        </button>
+        <div class="accordion__panel">
+          <p>El mejor regalo es que nos acompañes en este día tan especial! <br>
+            <br>Si quisieras hacernos un presente,<br>
+            nos podes ayudar, para irnos de luna de miel!<br>
+            <br>Caja de ahorro en dólares:<br>
+           Banco Galicia<br>
+            JULIETA NOBILE<br>
+            CTA: 4059146-7 137-5<br>
+            CBU: 00701378-31004059146753<br>
+            ALIAS: Bodajm2026.dol<br>
+            CUIL: 27-37557048-9<br>
+            <br>Caja de ahorro en pesos:<br>
+           Banco Galicia<br>
+            JULIETA NOBILE<br>
+            CTA: 4062946-4 137-6<br>
+            CBU: 00701378-30004062946468<br>
+            ALIAS: Bodajuliymaxi<br>
+            CUIL: 27-37557048-9<br>
+            
+        </div>
+      </div>
+    </div>
+<!-- Monograma (versión LIGHT sobre fondo verde) -->
+    <img class="monogram" src="assets/logo/monograma-light.svg" alt="" width="60" height="60" />
+  </section>
+
+
+  <!-- ============================================================
+       7. CONFIRMACIÓN DE ASISTENCIA
+  ============================================================ -->
+  <section class="section info-section">
+    <!-- Ilustración "copas" -->
+    <img class="illustration illustration--float" src="assets/illustrations/copas.svg" alt="" width="120" height="120" />
+    <p class="eyebrow">Confirmación de asistencia</p><br>
+    <h2 class="script-title script-title--lg">Esperemos que puedas acompañarnos</h2>
+    <p class="info-subtitle">
+      Te pedimos que completes este formulario antes del 10 de Octubre de 2026.<br>
+      Si fuiste invitado/a con un acompañante, completar un formulario por persona.
+    </p>
+
+    <!-- BOTÓN: pegá acá tu link de Google Forms -->
+    <a class="btn" href="https://forms.gle/3yigg68PZBZHEzLo9" target="_blank" rel="noopener">Confirmar asistencia</a>
+  </section>
+
+
+  <!-- ============================================================
+       8. ALOJAMIENTO (acordeón, fondo verde)
+  ============================================================ -->
+  <section class="section section--olive details-section">
+    <h2 class="script-title script-title--light">Alojamiento</h2>
+
+    <div class="accordion">
+      <div class="accordion__item">
+        <button class="accordion__trigger" aria-expanded="false">
+          <span>¿Dónde me puedo hospedar?</span>
+          <span class="accordion__arrow" aria-hidden="true"></span>
+        </button>
+        <div class="accordion__panel">
+          <div class="accordion__panel-inner">
+            <p>Te sugerimos alojamientos posibles para hospedarte cerca de la estancia, si quisieras quedarte.<br> En caso de que no tengas conductor designado, te recomendamos reservar el transporte de la vuelta para las 03:00am. Ya que es posible que no haya señal, ni autos de aplicación por la zona.<br />
+               <br />Hacé clic en cada uno para ver mas info:</p>
+            <!-- BOTONES: reemplazá cada href por el sitio web del alojamiento -->
+            <p class="lodging-link"><a href="https://www.google.com.py/travel/hotels/entity/ChkIpJSBnOKcho2XARoML2cvMXE2Mm1kZ19nEAE?ved=0CAAQ5JsGahcKEwjgk6ad0YmWAxUAAAAAHQAAAAAQAg&ts=CAEaIAoCGgASGhIUCgcI6g8QCBgfEgcI6g8QCRgBGAEyAhAAKgQKABoA" target="_blank" rel="noopener">Estancia El Chañar – Castelli, B1980 Coronel Brandsen, Provincia de Buenos Aires <br>+54 9 2223 41-1457 </a></p>
+            <p class="lodging-link"><a href="https://www.brisasdebrandsen.com.ar/" target="_blank" rel="noopener">Brisas Chacras con estilo – Acceso Loma Verde, Ruta Provincial 215 km 67,5, Coronel Brandsen <br> +54 9 11 2646-5712</a></p>
+            <p class="lodging-link"><a href="https://www.google.com.py/travel/hotels/entity/CgoIktSflqq3meIwEAE?ved=0CAAQ5JsGahcKEwjw7LuT8omWAxUAAAAAHQAAAAAQAg&ts=CAEaIAoCGgASGhIUCgcI6g8QCBgfEgcI6g8QCRgBGAEyAhAAKgQKABoA" target="_blank" rel="noopener">Hotel alderaan – Larrea 1190, B1980 Coronel Brandsen, Provincia de Buenos Aires <br>+54 9 2223 43-9007</a></p>
+          </div>
+      </div>
+    </div>
+
+<!-- Monograma (versión LIGHT sobre fondo verde) -->
+    <img class="monogram" src="assets/logo/monograma-light.svg" alt="" width="60" height="60" />
+  </section>
+
+  <!-- ============================================================
+       9. ÁLBUM COMPARTIDO
+  ============================================================ -->
+ <section class="section info-section">
+    <p class="eyebrow">Álbum compartido</p>
+    <h2 class="script-title">Recuerdos para archivar</h2>
+
+     <!-- BOTÓN: pegá acá tu link de Google Drive -->
+    <a class="btn" href="https://drive.google.com/drive/u/6/folders/1euiDlU_MH8wMVcNF6yTnQMQIa8Re8gD0" target="_blank" rel="noopener">Subir fotos</a><br />
+
+    <p class="info-subtitle">
+      Si sacás alguna foto durante la fiesta,<br />
+      podés subirla a este álbum compartido<br />
+      para que todos podamos disfrutarlas.
+    </p>
+  </section>
+
+<section class="section info-section">
+  <p class="eyebrow">Seguinos de cerca</p>
+  <img src="assets/images/footer/ig-j&m.webp"alt="" width="300" height="600"/><br />
+    <h2 class="script-title">Nuestro instagram de la boda</h2>
+
+     <!-- BOTÓN: pegá acá tu link de Google Drive -->
+    <a class="btn" href="https://www.instagram.com/labodadejuliymaxi/" target="_blank" rel="noopener">Seguir cuenta</a><br />
+
+    <p class="info-subtitle">
+      Te invitamos a acompañarnos en esta aventura juntos!
+      Archivos para documentar <br /> un día inolvidable  y les iremos mostrando como vivimos los días previos para entusiasmarlos!
+    </p>
+  </section>
+  
+   <!-- ============================================================
+       10. BANNER DE FOTOS FINAL (4 fotos fijas, entre dividers)
+  ============================================================ -->
+  <div class="divider" aria-hidden="true"></div>
+  <section class="photo-banner">
+    <img src="assets/images/footer/footer-01.png" alt="Juli y Maxi 1" />
+    <img src="assets/images/footer/footer-02.png" alt="Juli y Maxi 2" />
+    <img src="assets/images/footer/footer-03.png" alt="Juli y Maxi 3" />
+    <img src="assets/images/footer/footer-04.png" alt="Juli y Maxi 4" />
+  </section>
+  <div class="divider" aria-hidden="true"></div>
+
+  <!-- ============================================================
+       11. GRACIAS
+  ============================================================ -->
+  <section class="section thanks">
+    <h2 class="script-title script-title--xl">¡Gracias!</h2>
+    <!-- Monograma (versión DARK sobre fondo claro) -->
+    <img class="monogram" src="assets/logo/monograma-dark.svg" alt="" width="60" height="60" />
+  </section>
+
+
+  <!-- ============================================================
+       12. FOOTER
+  ============================================================ -->
+  <footer class="footer">
+    <p class="footer__handle">@clubposdata</p>
+    <p class="footer__brand">Posdata &reg;</p>
+    <p class="footer__rights">Branding en movimiento | Todos los derechos reservados</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
